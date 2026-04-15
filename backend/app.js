@@ -7,10 +7,18 @@ require("dotenv").config(); // Load environment variables
 
 const app = express();
 
+
 // Middleware
-app.use(cors({ origin: "http://localhost:5173" }));
+app.use(cors({ 
+  // Use the live Vercel URL if it exists, otherwise use your local Vite dev server
+  origin: process.env.FRONTEND_URL || "http://localhost:5173",
+  methods: ["GET", "POST"],
+  credentials: true
+}));
+
 app.use(express.json());
 
+app.use(express.json());
 // Updated MySQL connection for Aiven
 const connection = mysql.createConnection({
   host: process.env.DB_HOST,
