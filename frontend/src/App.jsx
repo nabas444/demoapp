@@ -7,7 +7,7 @@ import './App.css'
 
 function App() {
   return (
-    <BrowserRouter>
+
       <div className="app-shell">
         <header className="top-nav">
           <div className="brand">DemoApp</div>
@@ -35,7 +35,7 @@ function App() {
           </Routes>
         </div>
       </div>
-    </BrowserRouter>
+    
   )
 }
 
